@@ -83,8 +83,7 @@ class Reader:
 		elif atr_str == GEMALTO_NEW_CARD_ATR:
 			CardClass = GemaltoCard
 		else:
-			CardClass = GemaltoCard
-			#raise ConnectCardError('Error connecting to card: UNKNOWN CARD')
+			raise ConnectCardError('Error connecting to card: UNKNOWN CARD')
 
 		# try connecting reader
 		result, self.__hcard, self.active_protocol = scard.SCardConnect(
